@@ -1,0 +1,21 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: undetected-chromedriver-job
+spec:
+  # Delete logs after 1 day
+  ttlSecondsAfterFinished: 86400
+  template:
+    spec:
+      restartPolicy: OnFailure
+      # Add dshm otherwise chrome will crash due to lack of memory.
+      volumes:
+        - name: dshm
+          emptyDir:
+            medium: Memory
+      containers:
+        - name: undetected-chromedriver
+          image: chetan1111/undetected-chromedriver-kubernetes-example:1.0.0
+          volumeMounts:
+            - mountPath: /dev/shm
+              name: dshm

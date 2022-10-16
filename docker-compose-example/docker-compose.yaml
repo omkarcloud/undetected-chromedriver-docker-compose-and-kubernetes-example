@@ -1,0 +1,8 @@
+version: "3"
+services:
+  bot:
+    build:
+      context: .
+    restart: "no"
+    # Add shm_size otherwise chrome will crash due to lack of memory.
+    shm_size: 512m
