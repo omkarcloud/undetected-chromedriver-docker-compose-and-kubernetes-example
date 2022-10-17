@@ -19,3 +19,4 @@ spec:
           volumeMounts:
             - mountPath: /dev/shm
               name: dshm
+        # NOTE: Do not use any command or arguments here else chrome will crash because adding additional command overrides command given in dockerfile by undetected-chromedriver
