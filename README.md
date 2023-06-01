@@ -1,4 +1,4 @@
-Welcome my dear Rat,
+Welcome friend,
 Here is an example to demonstrate a Kubernetes and docker-compose example.
 
 To Run Docker Compose Example run the following commands
